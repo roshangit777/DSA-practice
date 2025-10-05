@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = [5, 3, 2, 1, 1, 1, 9, 9];
+      let count = 1;
+      let highCount = {};
+      function maxCount() {
+        let arr = num.sort((a, b) => a - b);
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === arr[i + 1]) {
+            count++;
+            highCount[arr[i]] = count;
+          } else {
+            if (!(arr[i] in highCount)) {
+              count = 1;
+              highCount[arr[i]] = count;
+            }
+          }
+        }
+        return Math.max(...Object.values(highCount));
+      }
+      console.log(maxCount());
+    </script>
+  </body>
+</html>

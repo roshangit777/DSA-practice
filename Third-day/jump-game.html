@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [2, 3, 1, 1, 4];
+      function canJump(nums) {
+        let initialval = nums[0];
+        for (let i = 0; i < nums.length; i++) {
+          if (nums.length === 1) {
+            return true;
+          }
+          if (nums[0] === 0 && nums.length === 1) {
+            return true;
+          }
+          if (nums[0] === 0) {
+            return false;
+          }
+          if (initialval >= nums.length) {
+            return true;
+          }
+
+          if (!(initialval === nums.length - 1)) {
+            initialval = initialval + nums[initialval - 1];
+            if (
+              nums[initialval] != 0 &&
+              nums[initialval] + initialval === initialval
+            ) {
+              return false;
+            }
+          } else {
+            return false;
+          }
+        }
+      }
+      let ret = canJump(nums);
+    </script>
+  </body>
+</html>

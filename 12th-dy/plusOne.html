@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function plusOne(digits) {
+        let carry = 1;
+        for (let i = digits.length - 1; i >= 0; i--) {
+          let sum = digits[i] + carry;
+          digits[i] = sum % 10;
+          carry = Math.floor(sum / 10);
+          if (carry === 0) break;
+        }
+        if (carry > 0) {
+          digits.unshift(carry);
+        }
+        return digits;
+      }
+
+      let digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 9, 9];
+      console.log(plusOne(digits));
+    </script>
+  </body>
+</html>

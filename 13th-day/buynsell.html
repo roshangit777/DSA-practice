@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let prices = [7, 1, 5, 3, 6, 4];
+      function maxProfit(prices) {
+        let minPrice = Infinity;
+        let maxProfit = 0;
+
+        for (let price of prices) {
+          minPrice = Math.min(minPrice, price);
+          maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+
+        return maxProfit;
+      }
+
+      console.log(maxProfit(prices));
+    </script>
+  </body>
+</html>
