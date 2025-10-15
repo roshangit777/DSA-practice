@@ -9,7 +9,7 @@ function frequencySort(s) {
     let maxFreq = Math.max(...arr);
     Object.keys(obj).forEach((key) => {
       if (obj[key] === maxFreq) {
-        for (let i = 1; i <= maxFreq; i++) {
+        for (let j = 1; j <= maxFreq; j++) {
           newStr += key;
         }
         arr[arr.indexOf(maxFreq)] = 0;
